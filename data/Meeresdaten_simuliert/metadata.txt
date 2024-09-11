@@ -1,0 +1,5 @@
+Found 1585 stations in the dataset
+Found 12 flagged values in the dataset
+Found 706000 valid data points in the dataset
+Found 85193 missing data points in the dataset
+Created 1585 stations.

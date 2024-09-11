@@ -1,0 +1,7 @@
+Found 1585 stations in the dataset
+Found 6506 flagged values in the dataset
+Found 699506 valid data points in the dataset
+Total number of data points in the dataset: 706012
+Percentage of flagged values: 0.9215140819136219
+Found 91687 missing data points in the dataset
+Created 1585 stations.
