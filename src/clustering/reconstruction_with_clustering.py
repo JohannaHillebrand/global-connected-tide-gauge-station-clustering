@@ -6,9 +6,11 @@ from loguru import logger
 from matplotlib import pyplot as plt
 
 from src.evaluation import evaluate_reconstruction
-from src.inner import tide_gauge_station, reconstruction
-from src.inner.reconstruction import calculate_global_mean_sea_level_for_altimetry_data, \
-    calculate_and_compare_global_sea_level
+from src.inner import reconstruction, tide_gauge_station
+from src.inner.reconstruction import (
+    calculate_and_compare_global_sea_level,
+    calculate_global_mean_sea_level_for_altimetry_data,
+)
 
 
 def start(altimetry_data_path: str, out_dir: str, stations: {int: tide_gauge_station.TideGaugeStation},

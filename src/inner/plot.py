@@ -6,9 +6,9 @@ import random
 import geopandas
 import matplotlib
 import shapely
-from geopandas import GeoDataFrame
-from geopandas import read_file
-from matplotlib import pyplot as plt, dates as mdates
+from geopandas import GeoDataFrame, read_file
+from matplotlib import dates as mdates
+from matplotlib import pyplot as plt
 from shapely import Point
 
 from src.inner import tide_gauge_station
@@ -41,7 +41,7 @@ def plot_timelines(time_series_to_plot: [(dict, str, str)], name: str, output_di
         plt.ylabel("sea level")
         plt.savefig(os.path.join(output_dir, f"{name}.svg"))
         plt.close()
-    except Exception as e:
+    except Exception:
         print(time_series_to_plot)
 
 
@@ -106,7 +106,7 @@ def plot_voronoi(land_path, output_dir, points_gdf, regions):
     points_gdf.plot(ax=ax, alpha=0.6, color="black", markersize=1)
     ax.set_axis_off()
     fig.tight_layout()
-    plt.savefig(os.path.join(output_dir, f"voronoi.svg"))
+    plt.savefig(os.path.join(output_dir, "voronoi.svg"))
     plt.close()
 
 
@@ -268,8 +268,8 @@ def random_color_generator(num_colors: int):
     colors = []
 
     for i in range(num_colors - 1):
-        h, s, l = random.random(), 0.5 + random.random() / 2.0, 0.4 + random.random() / 5.0
-        r, g, b = [int(256 * i) for i in colorsys.hls_to_rgb(h, l, s)]
+        h, s, el = random.random(), 0.5 + random.random() / 2.0, 0.4 + random.random() / 5.0
+        r, g, b = [int(256 * i) for i in colorsys.hls_to_rgb(h, el, s)]
         colors.append('#%02x%02x%02x' % (r, g, b))
         # colors.append(random.choice(list(mcolors.CSS4_COLORS.keys())))
     return colors
@@ -348,7 +348,7 @@ def plot_groups_of_stations():
             stations_to_remove.append(station.id)
     for station in stations_to_remove:
         stations.pop(station)
-    print(f"Stations present after 2010")
+    print("Stations present after 2010")
     # select stations that are between 9 degrees latitude and 15 degrees latitude and 53 degrees longitude and 55
     # degrees longitude (ostsee)
     stations = tide_gauge_station.detrend_and_mean_center_timeseries(stations)
@@ -365,7 +365,7 @@ def plot_groups_of_stations():
 
     radii = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
     for radius in radii:
-        output_path = f"../output/analyze_clustering/golf_bengalen/"
+        output_path = "../output/analyze_clustering/golf_bengalen/"
         selected_stations = golf_bengalen
         print(f"Selected {len(selected_stations)} stations")
         # plot selected stations
@@ -383,8 +383,8 @@ def plot_groups_of_stations():
         # plot selected stations
         plot_timelines_and_save(selected_stations, output_path, land_path)
         plot_clusters(selected_stations, output_path, land_path, clusters, stations, radius)
-        plot_graphs(selected_stations, output_path, land_path, clusters, stations, radius)
-        plot_squares(selected_stations, output_path, land_path, clusters, stations, radius)
+        # plot_graphs(selected_stations, output_path, land_path, clusters, stations, radius)
+        # plot_squares(selected_stations, output_path, land_path, clusters, stations, radius)
 
 
 def plot_clusters(current_stations, output_dir, land_dir, current_clusters, all_stations, current_radius):
@@ -414,7 +414,7 @@ def plot_clusters(current_stations, output_dir, land_dir, current_clusters, all_
     for center in current_clusters:
         empty_center = True
         for station_id in current_clusters[center]:
-            if not station_id in [station.id for station in current_stations]:
+            if station_id not in [station.id for station in current_stations]:
                 continue
             empty_center = False
             station = all_stations[station_id]
@@ -492,6 +492,6 @@ def plot_line_graph_and_regions(current_output_dir: str, line_graph_gdf: geopand
     line_graph_gdf.plot(ax=ax, color=line_graph_gdf["color"], zorder=2, linewidth=3)
     plt.xticks([-180, -135, -90, -45, 0, 45, 90, 135, 180])
     plt.yticks([-90, -45, 0, 45, 90])
-    plt.savefig(os.path.join(current_output_dir, f"voronoi_sections_graph.svg"))
+    plt.savefig(os.path.join(current_output_dir, "voronoi_sections_graph.svg"))
     plt.close()
     return

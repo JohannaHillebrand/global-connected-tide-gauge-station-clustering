@@ -251,7 +251,7 @@ def find_clustering_for_date(clustering_path: str, date: float, file_name: str):
                         clustering = json.load(json_file)
                 else:
                     logger.warning(f"File {file_name} not found in {os.path.join(clustering_path, directory)}")
-        except ValueError as e:
+        except ValueError:
             continue
     if clustering == {}:
         logger.warning(f"No clustering found for date {date}")
@@ -479,7 +479,7 @@ def assign_stations_to_grid_points(eof_dataset, out_dir, stations, name: str):
     """""
     if not os.path.exists(os.path.join(out_dir, f"{name}.json")):
         # get the closest lat and long for each station from the dataset
-        logger.info(f"Finding closest lat and lon for each station")
+        logger.info("Finding closest lat and lon for each station")
         closest_lat_long_for_station = {}
         not_assigned_counter = 0
         for station in tqdm(stations.values()):
@@ -746,7 +746,7 @@ def get_closest_grid_point(station_id, target_lat, target_lon, eof_dataset, outd
     if target_lon < -180 or target_lon > 180:
         raise ValueError(f"Longitude {target_lon} is out of bounds.")
     if eof_dataset.lat.values.min() < -90 or eof_dataset.lat.values.max() > 90:
-        raise ValueError(f"Latitude in dataset is out of bounds.")
+        raise ValueError("Latitude in dataset is out of bounds.")
     if eof_dataset.lon.values.min() < -180 or eof_dataset.lon.values.max() > 180:
         # fix the longitude
         logger.warning("Longitude out of range - attempting to fix it")

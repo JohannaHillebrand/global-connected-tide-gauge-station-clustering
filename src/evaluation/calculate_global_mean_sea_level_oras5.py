@@ -19,7 +19,7 @@ from matplotlib import pyplot as plt
 
 import src.inner.tide_gauge_station
 from src.inner import timeseries_difference
-from src.inner.plot import plot_timelines, plot_rmse_graph
+from src.inner.plot import plot_rmse_graph, plot_timelines
 
 global GLOBAL_MEAN_SEA_LEVEL
 global OUTPUT_DIRECTORY
@@ -60,7 +60,7 @@ def calculate_global_mean_sea_level(oras5_path: str, oras5_dim_path: str):
     Calculate the global mean sea level based on the ORAS5 data
     :return:
     """
-    counter = 0
+    # counter = 0
     # read grid, which gives us the dimensions of each grid point
     oras5_dim = netCDF4.Dataset(oras5_dim_path)
     e1t = oras5_dim.variables['e1t'][:]
@@ -81,9 +81,9 @@ def calculate_global_mean_sea_level(oras5_path: str, oras5_dim_path: str):
                                                    only_use_cftime_datetimes=False, only_use_python_datetimes=True)
             astropy_time_object = Time(current_date_netcdf[0], format="datetime", scale="utc")
             current_date = astropy_time_object.decimalyear
-            lat = oras5.variables["nav_lat"][:]
-            lon = oras5.variables["nav_lon"][:]
-            time = oras5.variables["time_counter"][:]
+            # lat = oras5.variables["nav_lat"][:]
+            # lon = oras5.variables["nav_lon"][:]
+            # time = oras5.variables["time_counter"][:]
             sossheig = oras5.variables["sossheig"][:]
             sossheig = sossheig.squeeze()
             # sossheig = replace_mask_with_None(sossheig)
@@ -120,9 +120,9 @@ def replace_mask_with_None(sossheig):
     for i in sossheig.recordmask:
         for j in i:
             # these are masked arrays, find missing data
-            if j == True:
+            if j:
                 zero_counter += 1
-            if j == False:
+            if not j:
                 non_zero_counter += 1
     print(f" zero values {zero_counter}")
     print(f" non zero values {non_zero_counter}")
@@ -139,7 +139,7 @@ def plot_world_map(lat, lon, sossheig, w):
     :return:
     """
     sossheig = numpy.multiply(sossheig, w)
-    fig = plt.figure(figsize=(12, 6))
+    # fig = plt.figure(figsize=(12, 6))
     ax = plt.axes(projection=ccrs.Robinson())
     ax.set_global()
     ax.coastlines(resolution="110m", linewidth=1)
@@ -282,7 +282,7 @@ def write_rms_to_file(avg_number_of_clusters: float, current_radius: float, rms_
         file.write(
             f"min number of clusters for radius {current_radius}: "
             f"{min_number_of_clusters}\n\n")
-        file.write(f"---------------------------------------------\n\n")
+        file.write("---------------------------------------------\n\n")
 
 
 def clustered_mean_sea_level_per_time_step(start_year: int, end_year: int, current_radius):
@@ -626,7 +626,7 @@ def plot_stations_over_under_global_sea_level(radius: float):
     time_step = "2014_2024"
     file_path = (f"{CLUSTERING_INPUT_PATH}/{time_step}/solution_"
                  f"{radius}.json")
-    all_current_stations = {}
+    # all_current_stations = {}
     with open(file_path) as file:
         current_solution = json.load(file)
 
@@ -691,12 +691,12 @@ def evaluate_selected_regions(oras5_path: str, oras5_dim_path: str):
     :return:
     """
     xr.set_options(keep_attrs=True)
-    logger.info(f"Mask creation")
-    oras_dim = xr.open_dataset(oras5_dim_path)
-    e1t = oras_dim.e1t[:]
-    e2t = oras_dim.e2t[:]
+    logger.info("Mask creation")
+    # oras_dim = xr.open_dataset(oras5_dim_path)
+    # e1t = oras_dim.e1t[:]
+    # e2t = oras_dim.e2t[:]
     # This is an array, which contains the area of each grid point
-    grid_dimensions = numpy.multiply(e1t, e2t)
+    # grid_dimensions = numpy.multiply(e1t, e2t)
     first_oras5 = xr.open_dataset(
         os.path.join(oras5_path, "1958-1979/sossheig_control_monthly_highres_2D_195801_CONS_v0.1.nc"))
     lon = first_oras5.nav_lon[:]
@@ -723,7 +723,7 @@ def evaluate_selected_regions(oras5_path: str, oras5_dim_path: str):
     sossheig_fifth = fifth_values.sossheig[0, :, :]
 
     # print(sossheig)
-    logger.info(f"grid point selection")
+    logger.info("grid point selection")
     grid_point_counter = 0
     selected_coords = []
 
@@ -748,7 +748,7 @@ def evaluate_selected_regions(oras5_path: str, oras5_dim_path: str):
     #             selected_coords.append((lon[i][j], lat[i][j]))
     logger.info(f"number of grid points overall: {grid_point_counter}")
     # plot grid point
-    logger.info(f"plotting grid points")
+    logger.info("plotting grid points")
     land_gdf = geopandas.read_file(land_directory)
     land_gdf = land_gdf.explode("geometry", ignore_index=True)
     grid_dict = {"id": [], "geometry": []}
@@ -846,7 +846,7 @@ def evaluate_selected_regions(oras5_path: str, oras5_dim_path: str):
                     number_of_centers += 1
                     for date in time_series.keys():
                         if date >= start_year and date <= end_year:
-                            if not date in average_sea_level_per_date.keys():
+                            if date not in average_sea_level_per_date.keys():
                                 average_sea_level_per_date[date] = time_series[date]
                                 average_sea_level_per_date[date] = time_series[date]
                             else:

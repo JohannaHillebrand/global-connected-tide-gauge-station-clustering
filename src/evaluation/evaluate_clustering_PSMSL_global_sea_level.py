@@ -4,7 +4,7 @@ import os
 import numpy
 
 import src.inner.tide_gauge_station
-from src.inner import timeseries_difference, plot
+from src.inner import plot, timeseries_difference
 
 
 def find_closest_date(altimetry: {float: float}, psmsl: [float]):
@@ -187,7 +187,7 @@ def evaluate_clustering(all_radii: [float], all_time_steps: [str], current_altim
                 to_delete.append(date)
         for date in to_delete:
             del current_altimetry_data[date]
-        with open(os.path.join(output_directory, f"date_mapping.json"), "w") as file:
+        with open(os.path.join(output_directory, "date_mapping.json"), "w") as file:
             json.dump(dates_mapping, file)
         rms = calculate_rms(current_altimetry_data, avg_clustered_values_mean_centered, dates_mapping)
         rms_per_radius[radius] = rms

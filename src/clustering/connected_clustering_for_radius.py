@@ -4,7 +4,7 @@ import os
 from loguru import logger
 from tqdm import tqdm
 
-from src.inner import tide_gauge_station, timeseries_difference, sea_level_line_graph, line_graph_clustering
+from src.inner import line_graph_clustering, sea_level_line_graph, tide_gauge_station, timeseries_difference
 
 
 def start(list_of_radii: [float], time_steps: [(int, int)], stations: {int: tide_gauge_station.TideGaugeStation},

@@ -3,9 +3,12 @@ import unittest
 from unittest import TestCase
 
 from src.inner.tide_gauge_station import TideGaugeStation
-from src.inner.timeseries_difference import calculate_rms_difference_between_pairs_of_stations, \
-    subtract_mean_from_timeseries, calculate_difference_between_all_pairs_of_stations, \
-    remove_dates_before_and_after_threshold
+from src.inner.timeseries_difference import (
+    calculate_difference_between_all_pairs_of_stations,
+    calculate_rms_difference_between_pairs_of_stations,
+    remove_dates_before_and_after_threshold,
+    subtract_mean_from_timeseries,
+)
 
 
 class Test(TestCase):

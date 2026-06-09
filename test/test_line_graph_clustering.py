@@ -3,9 +3,14 @@ from unittest import TestCase
 import networkx
 
 from src.inner import line_graph_clustering
-from src.inner.line_graph_clustering import compute_cluster_for_each_node, divide_graph_into_connected_components, \
-    select_centers, \
-    compute_clustering_for_given_radius, binary_search, compute_cluster_for_each_node_demanding_overlap
+from src.inner.line_graph_clustering import (
+    binary_search,
+    compute_cluster_for_each_node,
+    compute_cluster_for_each_node_demanding_overlap,
+    compute_clustering_for_given_radius,
+    divide_graph_into_connected_components,
+    select_centers,
+)
 
 
 class Test(TestCase):
@@ -311,12 +316,10 @@ class Test(TestCase):
         graph.add_edge(1, 2)
         graph.add_edge(2, 3)
         graph.add_edge(3, 4)
-        radius = 2
         distance_dict = {1: {1: [100, 0], 2: [95, 1], 3: [10, 2], 4: [20, 3]},
                          2: {1: [10, 1], 2: [100, 0], 3: [30, 1], 4: [90, 4]},
                          3: {1: [40, 2], 2: [40, 1], 3: [100, 0], 4: [95, 2]},
                          4: {1: [95, 3], 2: [50, 4], 3: [40, 4], 4: [100, 0]}}
-        current_node = 1
 
         solution_number_of_centers = 2
         graph1 = networkx.Graph()
@@ -385,7 +388,6 @@ class Test(TestCase):
         line_graph.add_edge('284', '986')
         line_graph.add_edge('284', '820')
         k = 4
-        outpath = "../output/test_output/"
         clustered_solution, *_ = line_graph_clustering.cluster_for_k(k, line_graph, differences, False, 0)
         expected_solution = {'284': ['284'], '826': ['826', '820'], '986': ['986']}
         assert clustered_solution == expected_solution, (f"clustered_solution should be {expected_solution}, "

@@ -12,7 +12,7 @@ from loguru import logger
 from srai.regionalizers import VoronoiRegionalizer
 
 import src.inner.tide_gauge_station
-from src.inner import tide_gauge_station, cluster_sections, timeseries_difference
+from src.inner import cluster_sections, tide_gauge_station, timeseries_difference
 from src.inner.plot import plot_voronoi
 from src.inner.timeseries_difference import remove_percentages
 
@@ -154,7 +154,7 @@ def calculate_area(component, stations_with_polygons: {str: shapely.Polygon}):
         else:
             try:
                 area = area.union(stations_with_polygons[station_id])
-            except:
+            except KeyError:
                 print(f"Could not find station {station_id}")
         counter += 1
 
@@ -219,7 +219,7 @@ def calculate_time_series_differences(current_output_dir: str, metadata_path: st
     :return:
     """
     stations_for_time_step = src.inner.tide_gauge_station.detrend_and_mean_center_timeseries(stations_for_time_step)
-    if not os.path.exists(os.path.join(current_output_dir, f"difference.txt")):
+    if not os.path.exists(os.path.join(current_output_dir, "difference.txt")):
         logger.info(f"Calculating timeseries difference for time step: {time_step}")
         diffs_with_percentages = timeseries_difference.calculate_difference_between_all_pairs_of_stations(
             stations_for_time_step, metadata_path, True, False)

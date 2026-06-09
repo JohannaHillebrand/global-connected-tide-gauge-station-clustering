@@ -87,7 +87,7 @@ def average_amount_of_missing_data(current_stations: {int: TideGaugeStation}, me
             file.write(f"Latest date: {latest_date}\n")
     else:
         with open(metadata_path, "a") as file:
-            file.write(f"No stations in the dataset\n")
+            file.write("No stations in the dataset\n")
 
     return
 

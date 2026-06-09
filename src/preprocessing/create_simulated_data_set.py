@@ -94,7 +94,6 @@ def start(output_path: str):
     lats = oras5.variables["nav_lat"][:]
     lons = oras5.variables["nav_lon"][:]
     sossheig = oras5.variables["sossheig"][:].squeeze()
-    counter = 0
     station_to_index = {}
     station_quadruples = []
     for station in tqdm(stations.values()):
@@ -155,7 +154,7 @@ def start(output_path: str):
                 try:
                     sea_level = sossheig[station_to_index[station.id][0], station_to_index[station.id][1]]
                     station.timeseries[current_date] = sea_level
-                except:
+                except IndexError:
                     stations_to_remove.append(station)
     print(f"stations to remove: {len(stations_to_remove)}")
     print(f"stations: {len(modified_stations)}")

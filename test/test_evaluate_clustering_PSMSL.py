@@ -1,8 +1,8 @@
 import unittest
 from unittest import TestCase
 
-from src.inner import timeseries_difference
 from src.evaluation import evaluate_clustering_PSMSL_global_sea_level as evaluate_clustering_PSMSL
+from src.inner import timeseries_difference
 
 
 class Test(TestCase):

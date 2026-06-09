@@ -25,7 +25,7 @@ def select_centers(g: networkx.Graph, possible_centers_dict: dict, node_belongin
                 break
         if start_node is None:
             if not networkx.is_forest(working_graph):
-                logger.info(f"There is a cycle in the input graph, please remove and try again")
+                logger.info("There is a cycle in the input graph, please remove and try again")
                 exit(1)
         current_centers, possible_centers_dict, node_belonging_dict, working_graph = find_largest_cluster(
             current_centers,

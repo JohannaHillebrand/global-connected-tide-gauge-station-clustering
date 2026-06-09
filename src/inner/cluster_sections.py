@@ -1,16 +1,22 @@
 import json
 import multiprocessing
 import os.path
-import time
 
+# import time
 import geopandas
 import pyproj
 import shapely
 from loguru import logger
 
 import src.inner.tide_gauge_station
-from src.inner import tide_gauge_station, line_graph_clustering, sea_level_line_graph, timeseries_difference, \
-    voronoi_diagram, plot
+from src.inner import (
+    line_graph_clustering,
+    plot,
+    sea_level_line_graph,
+    tide_gauge_station,
+    timeseries_difference,
+    voronoi_diagram,
+)
 
 
 def calculate_number_of_stations_per_region(regions_gdf: geopandas.GeoDataFrame,
@@ -22,7 +28,7 @@ def calculate_number_of_stations_per_region(regions_gdf: geopandas.GeoDataFrame,
     :return:
     """
     stations = stations.copy()
-    time1 = time.time()
+    # time1 = time.time()
     station_dict = {"id": [], "color": [], "geometry": []}
     total_number_of_stations = 0
     for index, row in regions_gdf.iterrows():
@@ -51,7 +57,7 @@ def calculate_number_of_stations_per_region(regions_gdf: geopandas.GeoDataFrame,
     #     print("All stations are in a region")
     # print(f"Total number of stations: {total_number_of_stations}")
     stations_gdf = geopandas.GeoDataFrame(station_dict, crs="EPSG:4326")
-    time2 = time.time()
+    # time2 = time.time()
     # print(f"Time taken for calculating number of stations per region: {time2 - time1}")
     return regions_gdf, stations_gdf
 
@@ -211,7 +217,7 @@ def calculate_solution(land_path: str, output_dir: str, regions_gdf: geopandas.G
                                 center_dict, geopandas.GeoDataFrame(center_dict, crs="EPSG:4326"))
     with open(os.path.join(output_dir, f"solution{wanted_number_of_centers}.json"), "w") as file:
         json.dump(final_solution, file)
-    with open(os.path.join(output_dir, f"metadata.txt"), "a") as file:
+    with open(os.path.join(output_dir, "metadata.txt"), "a") as file:
         file.write(f"Wanted number of centers: {wanted_number_of_centers}\n")
         file.write(f"Number of centers: {len(final_solution)}\n")
         file.write(f"Max radius: {overall_max_radius}\n")

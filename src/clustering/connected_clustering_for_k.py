@@ -4,8 +4,7 @@ import os.path
 from loguru import logger
 from tqdm import tqdm
 
-from src.inner import sea_level_line_graph, line_graph_clustering
-from src.inner import tide_gauge_station, timeseries_difference
+from src.inner import line_graph_clustering, sea_level_line_graph, tide_gauge_station, timeseries_difference
 from src.inner.sea_level_line_graph import create_base_graph
 from src.inner.timeseries_difference import calculate_time_series_difference
 
@@ -40,13 +39,14 @@ def start(list_of_k: [int], time_steps: [],
         if not os.path.exists(os.path.join(current_output_dir, "difference.txt")):
             # calculate timeseries difference if not present for this timestep
             # logger.info(f"Calculating difference between pairs of time series for time step {time_step}")
-            current_difference, current_percentage = calculate_time_series_difference(current_output_dir,
+            current_difference, _ = calculate_time_series_difference(current_output_dir,
                                                                                       filtered_stations, mae,
                                                                                       rms)
         else:
             # read timeseries difference from file
             current_difference = timeseries_difference.read_differences_from_file(current_output_dir, "difference.txt")
-            current_percentage = timeseries_difference.read_differences_from_file(current_output_dir, "percentage.txt")
+            # current_percentage = 
+            # timeseries_difference.read_differences_from_file(current_output_dir, "percentage.txt")
         # calculate line graph if not present for this timestep
         if not os.path.exists(os.path.join(current_output_dir, f"line_graph_{time_step}")):
             graph_metadata_path = os.path.join(current_output_dir, "graph_metadata.txt")
@@ -72,7 +72,7 @@ def start(list_of_k: [int], time_steps: [],
             # read line graph from file
             line_graph = sea_level_line_graph.read_line_graph(os.path.join(current_output_dir, "line_graph.csv"),
                                                               os.path.join(current_output_dir, "node_data.txt"))
-        input_for_clustering = []
+        # input_for_clustering = []
         # logger.info(f"Calculating clustering for time step {time_step} for k = {list_of_k}")
         if percentage:
             minimum_overlap_wanted = True

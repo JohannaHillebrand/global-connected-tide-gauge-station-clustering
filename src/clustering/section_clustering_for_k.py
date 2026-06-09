@@ -3,7 +3,7 @@ import os
 import shapely
 
 from src.inner import tide_gauge_station
-from src.inner.cluster_sections import fill_region_dict, divide_and_cluster
+from src.inner.cluster_sections import divide_and_cluster, fill_region_dict
 
 
 def start(regions: {str: shapely.Polygon}, station_path: str, time_steps: [(int, int)], land_path: str, output_dir: str,
@@ -37,7 +37,7 @@ def start(regions: {str: shapely.Polygon}, station_path: str, time_steps: [(int,
             os.makedirs(current_output_dir)
         metadata_path = os.path.join(current_output_dir, "metadata.txt")
         with open(metadata_path, "w") as file:
-            file.write(f"------------------------------------------ \n\n")
+            file.write("------------------------------------------ \n\n")
             file.write(f"Start for time step: {time_step}\n")
         # filter stations to use only the ones present in the current timestep
         stations_for_time_step = tide_gauge_station.filter_stations_for_time_step(stations, start_year, end_year)

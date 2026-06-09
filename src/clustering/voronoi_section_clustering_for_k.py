@@ -4,10 +4,14 @@ import time
 import geopandas
 from loguru import logger
 
-from src.inner import tide_gauge_station, sea_level_line_graph, plot
+from src.inner import plot, sea_level_line_graph, tide_gauge_station
 from src.inner.cluster_sections import fill_region_dict
-from src.inner.voronoi_diagram import determine_station_area, calculate_time_series_differences, \
-    calculate_areas_per_graph, voronoi_section_clustering
+from src.inner.voronoi_diagram import (
+    calculate_areas_per_graph,
+    calculate_time_series_differences,
+    determine_station_area,
+    voronoi_section_clustering,
+)
 
 
 def start(station_path: str, output_dir: str, land_path: str, ocean_path: str, time_steps: [(int, int)],

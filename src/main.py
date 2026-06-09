@@ -5,9 +5,14 @@ from loguru import logger
 
 import src.clustering.section_clustering_for_k
 import src.clustering.voronoi_section_clustering_for_k
+from src.clustering import (
+    cluster_coastline_graph_for_radius,
+    connected_clustering_for_k,
+    connected_clustering_for_radius,
+    reconstruction_with_clustering,
+    voronoi_section_clustering_for_k,
+)
 from src.inner import tide_gauge_station
-from src.clustering import connected_clustering_for_k, connected_clustering_for_radius, \
-    cluster_coastline_graph_for_radius, reconstruction_with_clustering, voronoi_section_clustering_for_k
 
 if __name__ == "__main__":
     # ----------------------------------------------------9

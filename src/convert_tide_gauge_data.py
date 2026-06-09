@@ -19,7 +19,7 @@ def write_to_file(path: str, tide_gauge_stations: dict[int, TideGaugeStation]):
             all_dates.add(date)
     sorted_dates = sorted(all_dates)
     with open(file_path, "w") as f:
-        f.write(f"station_id, station_name, latitude, longitude")
+        f.write("station_id, station_name, latitude, longitude")
         for date in sorted_dates:
             f.write(f", {date}")
         f.write("\n")
@@ -32,13 +32,13 @@ def write_to_file(path: str, tide_gauge_stations: dict[int, TideGaugeStation]):
                 if date in station.timeseries:
                     value = station.timeseries[date]
                     if value == -99999:
-                        f.write(f", None")
+                        f.write(", None")
                     else:
                         # convert value from mm to m
                         value = value * 0.001
                         f.write(f", {value}")
                 else:
-                    f.write(f", None")
+                    f.write(", None")
             f.write("\n")
     return
 

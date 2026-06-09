@@ -6,7 +6,7 @@ from loguru import logger
 
 import src.inner.tide_gauge_station
 from src.evaluation import evaluate_clustering_PSMSL_global_sea_level
-from src.inner import timeseries_difference, plot
+from src.inner import plot, timeseries_difference
 
 
 def determine_sample_sizes(all_radii: [float], all_time_steps: [str], current_clustering_directory: str,

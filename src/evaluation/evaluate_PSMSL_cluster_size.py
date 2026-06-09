@@ -64,12 +64,14 @@ def iterate_over_radii(current_output_path: str, all_radii: [float], all_time_st
             eval_file.write(
                 f"Center reoccurrence: "
                 f"{sum([reoccurrence for reoccurrence in center_reoccurrence.values() if reoccurrence != 0])}\n")
+            reoccurring = sum(r for r in center_reoccurrence.values() if r != 0)
+            total = sum(f + 1 for f in center_reoccurrence.values())
             eval_file.write(
                 f"Center reoccurrence relative to the number of centers: "
-                f"{round(sum([reoccurrence for reoccurrence in center_reoccurrence.values() if reoccurrence != 0]) / sum([(frequency + 1) for center, frequency in center_reoccurrence.items()]), 2)} \n")
+                f"{round(reoccurring / total, 2)} \n")
             eval_file.write(
                 f"center reoccurrence on average: {round(numpy.mean(list(center_reoccurrence.values())), 2)}\n")
-            eval_file.write(f"\n\n")
+            eval_file.write("\n\n")
 
     pass
 

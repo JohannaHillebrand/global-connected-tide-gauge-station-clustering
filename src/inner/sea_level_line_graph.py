@@ -87,9 +87,8 @@ def group_stations(stations: [TideGaugeStation], metadata_path: str):
                     grouping_stations[station.id].append(second_station)
     if len(grouping_stations.keys()) > 0:
         with open(metadata_path, "a") as metadata_file:
-            metadata_file.write(
-                f"Preliminary grouping done. Averaged group size is: "
-                f"{sum([len(grouping_stations[station]) for station in grouping_stations.keys()]) / len(grouping_stations.keys())} \n")
+            avg = sum(len(grouping_stations[s]) for s in grouping_stations) / len(grouping_stations)
+            metadata_file.write(f"Preliminary grouping done. Averaged group size is: {avg} \n")
     return grouping_stations
 
 
@@ -167,7 +166,7 @@ def merge_line_graphs_that_are_close(graph: networkx, sea_level_diffs: {int: {in
     :return:
     """
     edge_nodes = []
-    triples = []
+    # triples = []
     for node in graph.nodes():
         if graph.degree(node) <= 1:
             edge_nodes.append(node)
@@ -258,7 +257,7 @@ def create_line_graph(stations_with_groups: {int: []}, differences: {int: {int: 
     try:
         networkx.find_cycle(graph_assignment)
         logger.warning(
-            f"There are still cycles in the graph. This should not be the case and points to an error in the code.")
+            "There are still cycles in the graph. This should not be the case and points to an error in the code.")
     except networkx.exception.NetworkXNoCycle:
         pass
 
@@ -267,7 +266,7 @@ def create_line_graph(stations_with_groups: {int: []}, differences: {int: {int: 
     try:
         networkx.find_cycle(merged_graph)
         logger.warning(
-            f"There are still cycles in the graph. This should not be the case and points to an error in the code.")
+            "There are still cycles in the graph. This should not be the case and points to an error in the code.")
     except networkx.exception.NetworkXNoCycle:
         pass
     return merged_graph
@@ -362,11 +361,10 @@ def check_for_consistency(stations: [TideGaugeStation], sea_level_diffs: {int: {
     if len(stations_to_remove) > 0:
         with open(metadata_path, "a") as metadata_file:
             metadata_file.write(
-                f"There are stations that are not in the sea level differences dictionary: Removing {[this_station.id
-                                                                                                      for
-                                                                                                      this_station in
-                                                                                                      stations_to_remove]} and Proceeding...\n")
-            metadata_file.write(f"Number of stations before removal: {len(stations)}\n")
+                f"There are stations that are not in the sea level differences dictionary: "
+                f"Removing {[this_station.id for this_station in stations_to_remove]} and Proceeding...\n"
+)
+
         for current_station in stations_to_remove:
             stations.remove(current_station)
         with open(metadata_path, "a") as metadata_file:

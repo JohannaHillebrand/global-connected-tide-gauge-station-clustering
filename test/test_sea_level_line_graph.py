@@ -3,8 +3,14 @@ from unittest import TestCase
 import networkx
 from shapely import Point
 
-from src.inner.sea_level_line_graph import group_stations, sort_neighbors_for_nodes, \
-    find_closest_end_node, merge_line_graphs_that_are_close, sort_edges_to_add, create_line_graph
+from src.inner.sea_level_line_graph import (
+    create_line_graph,
+    find_closest_end_node,
+    group_stations,
+    merge_line_graphs_that_are_close,
+    sort_edges_to_add,
+    sort_neighbors_for_nodes,
+)
 from src.inner.tide_gauge_station import TideGaugeStation
 
 

@@ -4,7 +4,7 @@ import os
 from loguru import logger
 from tqdm import tqdm
 
-from src.inner import tide_gauge_station, sea_level_line_graph, timeseries_difference, line_graph_clustering
+from src.inner import line_graph_clustering, sea_level_line_graph, tide_gauge_station, timeseries_difference
 
 
 def start(list_of_radii: [float], coastline_line_graph_path: str, node_path: str,
@@ -35,12 +35,12 @@ def start(list_of_radii: [float], coastline_line_graph_path: str, node_path: str
         else:
             for station in stations.values():
                 station.timeseries_detrended_normalized = station.timeseries.copy()
-        sea_level_diff, sea_level_percentage = timeseries_difference.calculate_time_series_difference(output_dir,
+        sea_level_diff, _ = timeseries_difference.calculate_time_series_difference(output_dir,
                                                                                                       stations, mae,
                                                                                                       rms)
     else:  # read time series difference from file
         sea_level_diff = timeseries_difference.read_differences_from_file(output_dir, "difference.txt")
-        sea_level_percentage = timeseries_difference.read_differences_from_file(output_dir, "percentage.txt")
+        # sea_level_percentage = timeseries_difference.read_differences_from_file(output_dir, "percentage.txt")
     # calculate connected clustering for the given radii
     minimum_overlap_wanted = False
     overlap = 0

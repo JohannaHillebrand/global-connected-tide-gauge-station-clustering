@@ -7,8 +7,12 @@ import shapely
 from loguru import logger
 
 from src.inner.plot import plot_line_graph
-from src.inner.sea_level_line_graph import check_for_consistency, group_stations, \
-    sort_neighbors_for_nodes, gdf_from_graph
+from src.inner.sea_level_line_graph import (
+    check_for_consistency,
+    gdf_from_graph,
+    group_stations,
+    sort_neighbors_for_nodes,
+)
 from src.inner.tide_gauge_station import TideGaugeStation
 
 
@@ -61,8 +65,8 @@ def create_tree_graph(in_path: str, stations: [TideGaugeStation], stations_gdf: 
         graph.add_node(station.id, geometry=shapely.geometry.Point(station.longitude, station.latitude))
     # select the best neighbor for each node, unless a cycle is formed
     logger.info("Creating tree graph")
-    change = True
-    counter = 0
+    # change = True
+    # counter = 0
     how_many_edges_removed = 0
     for node in graph.nodes():
         if len(ordered_stations[node]) == 0:
@@ -109,10 +113,10 @@ def create_tree_graph(in_path: str, stations: [TideGaugeStation], stations_gdf: 
     try:
         networkx.find_cycle(graph)
         logger.warning(
-            f"There are still cycles in the graph. This should not be the case and points to an error in the code.")
+            "There are still cycles in the graph. This should not be the case and points to an error in the code.")
     except networkx.exception.NetworkXNoCycle:
         pass
-    logger.info(f"Finished creating tree graph")
+    logger.info("Finished creating tree graph")
     # save node-data
     node_data = {}
     for station in stations:

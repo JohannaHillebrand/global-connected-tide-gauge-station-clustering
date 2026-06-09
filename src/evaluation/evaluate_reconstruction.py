@@ -132,6 +132,6 @@ def start(reconstructed_data: xarray.Dataset, stations: {int: src.inner.tide_gau
                 reconstructed_data.sel(lat=closest_lat, lon=closest_lon, time=closest_date).sla.values)) ** 2
         rms = (rms / len(station_data)) ** 0.5
         # write to file
-        with open(os.path.join(output_dir, f"rms_stations.txt"), "a") as file:
+        with open(os.path.join(output_dir, "rms_stations.txt"), "a") as file:
             file.write(f"{station_id}\t{rms}\n")
         print(f"RMS for station {station_id}: {rms}")

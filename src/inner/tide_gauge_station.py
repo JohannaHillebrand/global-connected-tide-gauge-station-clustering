@@ -75,7 +75,7 @@ def read_and_create_stations(path: str, metadata_path: str):
                             valid_values += 1
 
                         current_stations[station].timeseries[date] = sea_level
-            except:
+            except IndexError:
                 # logger.warning(f"No file found for station {station}")
                 stations_to_remove.append(station)
         for station in stations_to_remove:
