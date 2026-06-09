@@ -11,4 +11,6 @@ The data following the gauges re-installation in 2009 appears to be slightly hig
 Using values from the SONEL website the latitude and longitude values for Dieppe have been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 29-Sep-2014
 New data points have been added to the data for Dieppe in particular data has been added for the period 1993-2007. Because of this the whole dataset has been re-loaded.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

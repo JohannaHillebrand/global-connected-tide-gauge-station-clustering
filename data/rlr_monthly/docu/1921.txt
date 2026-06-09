@@ -5,4 +5,6 @@ RLR factor is 3.756m.
 Using values from the SONEL website the latitude and longitude for Le Crouesty have been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 29-Sep-2014
 The Le Crouesty data downloaded from SONEL included revised data for 2007/8. Because of this the whole dataset has been re-loaded.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

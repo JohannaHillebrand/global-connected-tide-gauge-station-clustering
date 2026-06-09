@@ -9,4 +9,6 @@ Instrument type: (1982-1983,1986-present) Leupold and Stevens Analog-to-Digital 
 Complete dataset April 1982 to Dec. 2012 downloaded onto the database from UHSLC
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 27-Feb-2014
 Data for Nuku Hiva is available from the SONEL website. Data is supplied to SONEL by SHOM. SHOM has confirmed that the tide gauge at Nuku Hiva belongs to UHSLC. However, SHOM work closely with UHSLC to maintain and control the instrumentation.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 16-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

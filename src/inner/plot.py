@@ -13,7 +13,7 @@ from shapely import Point
 
 from src.inner import tide_gauge_station
 
-matplotlib.use("cairo")
+matplotlib.use("Agg")
 plt.rcParams.update({'font.size': 20})
 
 

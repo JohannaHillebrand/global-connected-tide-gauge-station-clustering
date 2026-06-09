@@ -10,4 +10,6 @@ Laurent Testut for LEGOS the authority responsible for Kerguelen suspects that t
 Using values from the SONEL website the latitude and longitude for Kerguelen has been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 04-Apr-2017
 Using information from both SHOM and SONEL Kerguelen has been made RLR. Primary benchmark is B under the SHOM id and KERGU-13 under the SONEL id. Primary benchmark is 3.072m above the gauge datum Zero Hydrographic.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

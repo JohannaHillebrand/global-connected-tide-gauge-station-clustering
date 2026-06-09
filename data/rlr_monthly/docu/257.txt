@@ -12,4 +12,6 @@ Treat data 2000 onwards as suspect.
 Although the Avonmouth gauge is still operational the jetty on which the gauge stands is collapsing. A replacement gauge has been installed at Portbury.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 22-Jan-2016
 A value of MTL-MSL=127 mm has been derived using from the GESLA2 (high-frequency tide gauge) dataset using harmonic constituents. As the correction is only applied to RLR data and the data during the periods 1959-1972, 1976-1981, and 1983-1985 are metric, it is not used in the data set.  Should these periods become RLR in future, however, a correction for MTL-MSL would be needed. The 001 flag has been set only because this correction is highly uncertain.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 24-Jun-2024
+The gauge at Avonmouth stopped operating in 2012 as was formally replaced by the site at Portbury
 

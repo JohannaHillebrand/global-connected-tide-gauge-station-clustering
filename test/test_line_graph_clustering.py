@@ -386,7 +386,7 @@ class Test(TestCase):
         line_graph.add_edge('284', '820')
         k = 4
         outpath = "../output/test_output/"
-        clustered_solution = line_graph_clustering.cluster_for_k(k, line_graph, differences, False, 0)
+        clustered_solution, *_ = line_graph_clustering.cluster_for_k(k, line_graph, differences, False, 0)
         expected_solution = {'284': ['284'], '826': ['826', '820'], '986': ['986']}
         assert clustered_solution == expected_solution, (f"clustered_solution should be {expected_solution}, "
                                                          f"but is {clustered_solution}")

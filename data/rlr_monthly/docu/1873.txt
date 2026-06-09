@@ -6,4 +6,6 @@ All monthly means for Crozet have been taken from the University of Hawaii Sea L
 Following information received from LEGOS the authority responsible for the Crozet tide gauge. They have confirmed that the gauge is not yet levelled into any benchmark.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 24-Sep-2014
 Using values from the SONEL website the latitude and longitude values for Crozet have been revised.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

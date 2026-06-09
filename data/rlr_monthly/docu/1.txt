@@ -10,4 +10,6 @@ After investigation the RLR diagram has been revised. Primary benchmark remains 
 Using values from the SONEL website the latitude and longitude values have been revised. Additional data for 1857-1860 were included in the SONEL data this has now been added to the database.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 26-Jan-2016
 A value of MTL-MSL=-23 mm has been applied to the RLR data for the period 1807-1835.  This value was taken from the Wöppelmann et al. reference above.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

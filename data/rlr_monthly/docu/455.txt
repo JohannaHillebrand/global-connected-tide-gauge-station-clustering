@@ -15,4 +15,6 @@ From information on the SHOM and SONEL websites the RLR diagram for Calais has b
 When downloaded from SONEL additional data points have been added for 1987-90. The whole dataset has been loaded to include these.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 21-Jun-2016
 When loading the 2015 dataset it was noted that data points for September-November 2011 and February 2012 had been revised.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

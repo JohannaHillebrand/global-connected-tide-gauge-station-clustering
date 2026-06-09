@@ -20,4 +20,6 @@ Mean Sea Level values for 2005/6 flagged suspect following report prepared for X
 Primary benchmark is M.AC-0-VIII 1.99m above TGZ.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 24-Sep-2014
 Using values from the SONEL website the latitude and longitude for Marseille as been revised.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

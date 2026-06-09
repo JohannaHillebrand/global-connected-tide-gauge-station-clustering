@@ -19,4 +19,6 @@ Previously held data Nov 1994- May 2000 looks almost the same and has been
 stored.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 02-Oct-2014
 Using data from SONEL the latitude and longitude for Saint Paul has been updated.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

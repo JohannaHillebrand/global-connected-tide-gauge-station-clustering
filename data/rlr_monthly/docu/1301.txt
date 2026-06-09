@@ -10,4 +10,6 @@ Primary benchmark is now IGN O.L.K. 3P3 no 12 22.669m above TGZ.
 Using values from the SONEL website the latitude and longitude for Concarneau has been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 23-Jun-2016
 The dataset including the 2015 contained areas of revised data. Because of this the coplete dataset has been re-loaded.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

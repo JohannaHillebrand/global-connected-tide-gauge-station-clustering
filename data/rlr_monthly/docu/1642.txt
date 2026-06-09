@@ -10,4 +10,6 @@ The data following the gauges re-installation in 2008 looks slightly higher than
 Using values from the SONEL website the latitude and longitude for Dzaoudzi have been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 01-Oct-2014
 Using SHOM data Dzaoudzi has been made RLR from its re-installation in 2008. Primary benchmark is N-402-BIS 7.332m above Zero Hydrographique.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

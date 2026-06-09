@@ -7,4 +7,6 @@ Dunkerque acoustic gauge installed 1998. Data now supplied by Service Hydrograph
 Using values from the SONEL website the latitude and longitude for Dunkerque have been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 29-Sep-2014
 Additional data points have been added. Because of this the whole dataset has been re-entered.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

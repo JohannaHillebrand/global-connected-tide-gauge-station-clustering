@@ -12,4 +12,6 @@ To agree with the leveling sheet on SONEL website the benchmark name has been ch
 Using data from the SONEL website the latitude and longitude for Pointe a Pitre have been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 21-Jun-2016
 When adding the 2015 data to the dataset it was noted that the datapoints for January-March 2011 had been revised.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

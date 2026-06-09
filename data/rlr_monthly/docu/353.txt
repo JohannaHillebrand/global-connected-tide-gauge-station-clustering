@@ -18,4 +18,6 @@ The data for Bakar was previously flagged 'suspect' for 1983. However after load
 Following receipt of additional station information the RLR diagram has been updated. Primary benchmark BV15663 is 3.398m above TGZ. Benchmark A510 is 3.571m above TGZ. RLR factor remains 6.327.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 11-Oct-2021
 Supplier provided new datum information as measured in 2015. Benchmark BV13663 is now 3.401m above TGZ, and benchmark A510 is 3.573 m above TGZ.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 16-Jul-2024
+Recent geodetic measurements from 2023 have shown that the benchmark BV15663 is 3.3994 m above the TGZ. Benchmark A510 is 3.5706 m above the TGZ.
 

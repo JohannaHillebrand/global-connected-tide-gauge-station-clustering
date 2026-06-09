@@ -14,4 +14,6 @@ Following information received from SHOM regarding the Papeete gauge it was real
 Using information from the UH levelling sheet previous data for Papeete the PSMSL id. 1260 (1969-1975)has been added to this dataset together with the updated JASL data.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 11-Oct-2018
 Following correspondence with both SONEL and UHSLC data for Papeete-A PSMSL id. 1260 (1969-1975) has been removed from this dataset. On further investigation it was discovered  that at some point in time 850mm had been added to Papeete-A
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 16-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

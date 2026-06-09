@@ -3,14 +3,11 @@ import os
 import shapely
 from loguru import logger
 
-import src.start_clustering.section_clustering_for_k
-import src.start_clustering.voronoi_section_clustering_for_k
+import src.clustering.section_clustering_for_k
+import src.clustering.voronoi_section_clustering_for_k
 from src.inner import tide_gauge_station
-from src.start_clustering import connected_clustering_for_k, connected_clustering_for_radius, \
+from src.clustering import connected_clustering_for_k, connected_clustering_for_radius, \
     cluster_coastline_graph_for_radius, reconstruction_with_clustering, voronoi_section_clustering_for_k
-
-# TODO: add automatic download of the most recent data if not otherwise specified by the user
-# TODO: check out deployment options
 
 if __name__ == "__main__":
     # ----------------------------------------------------9
@@ -59,7 +56,7 @@ if __name__ == "__main__":
         wanted_number_centers_list = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700]
         for wanted_number_centers in wanted_number_centers_list:
             logger.info(f"Section-clustering for number of centers: {wanted_number_centers}")
-            src.start_clustering.section_clustering_for_k.start(regions, station_list_file_path, time_steps, land_path,
+            src.clustering.section_clustering_for_k.start(regions, station_list_file_path, time_steps, land_path,
                                                                 out_dir,
                                                                 wanted_number_centers)
 

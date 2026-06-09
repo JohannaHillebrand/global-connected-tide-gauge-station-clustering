@@ -10,4 +10,6 @@ It was discovered that the data values for Workington were 18cm low from its ins
 TGI were at site on 18.02.2013 to repair a leak in the pneumatic panel. During July pneumatic problems were again noticed. TGI re-visted the site on 28.07.2013 to carry out general maintenance and repair the relief valve.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 02-Jun-2015
 TGI were at site twice during 2014 first visit was 14.05.14 for a meeting with the electrical inspector and then again on 10.11.14 for general maintenance and to change the compressor.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 03-Sep-2025
+Station flagged due to doubts about long term datum stability. Hogarth (2020) describes two uncorrected negative steps in the record, apparent once seasonal variation, land movement, meteorological variability and common variation across the whole UK are removed (https://doi.org/10.1016/j.pocean.2020.102333)
 

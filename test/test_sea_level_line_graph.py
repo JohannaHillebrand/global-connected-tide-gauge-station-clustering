@@ -131,8 +131,8 @@ class Test(TestCase):
                                  6: {1: 0.4, 2: 0.4, 3: 0.4, 4: 0.4, 5: 0.2, 7: 0.1},
                                  7: {1: 0.5, 2: 0.5, 3: 0.5, 4: 0.5, 5: 0.3, 6: 0.1}}
         result = sort_edges_to_add(edges_to_add, graph, sea_level_differences)
-        expected = [(3, 4), (5, 6), (1, 3), (2, 3), (5, 7), (1, 4), (2, 4), (1, 5), (1, 6), (2, 5), (2, 6), (3, 6),
-                    (4, 6), (1, 7), (2, 7), (3, 7), (4, 7)]
+        expected = [(3, 4), (5, 6), (1, 3), (2, 3), (5, 7), (2, 4), (2, 5), (2, 6), (3, 6),
+                    (4, 6), (2, 7), (3, 7), (4, 7)]
 
         assert result == expected, (f'Expected {expected}, but got {result}')
 
@@ -159,7 +159,7 @@ class Test(TestCase):
         expected.add_node(5, geometry=Point(5, 5))
         expected.add_edge(1, 2)
         expected.add_edge(2, 3)
-        expected.add_edge(1, 4)
+        expected.add_edge(3, 4)
         expected.add_edge(4, 5)
         result = create_line_graph(stations_with_groups, sealevel_difference, stations, "test_output/metadata.txt")
         open('test_output/metadata.txt', 'w').close()

@@ -10,4 +10,6 @@ The Hillarys record suggests that sea level is rising relatively fast due to loc
 Using information from the National Tidal Centre, Australia the RLR diagram has been revised. Benchmark HZ879 is 4.211m above TGZ. Benchmark Hamersley 130 T1 is 4.895m above TGZ and the national datum reference is 0.763m above tgz. The RLR factor is 6.3m.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 11-Feb-2014
 The high rate of sea level rise at Hillarys during the two decades since the early 1990s has been linked to groundwater withdrawal, see Burgette et al. (2013 Geophysical Journal International).
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 11-Jun-2025
+The Hillarys station was removed in July 2023 to allow for wharf refurbishment, following which it was reinstated at a new height and resurveyed in April 2024.  There was a long-standing 80 mm discrepancy in the contact point prior to July 2023 (levelling surveys were made to the underside of a bolt on the tide gauge Hammersly 130 T1, whereas sea level sensors were positioned relative to the topside of the bolt). This change has been applied to the whole dataset starts Nov 1991. 
 

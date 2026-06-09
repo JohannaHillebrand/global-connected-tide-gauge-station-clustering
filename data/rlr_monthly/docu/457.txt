@@ -10,4 +10,6 @@ RLR factor for data 1941-1996 is 3.905m. RLR factor for data 1996 onwards is
 3.505m. RLR (1974) is 12.757m below TGBM IGN "NGF" OKS 69
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 02-Oct-2014
 Using data from SONEL the latitude and longitude for St. Nazaire has been updated. The data downloaded from SONEL contained a number of additional and revised data points particularly around the early 2000's. Because of this the whole dataset was reloaded onto the database. This revised dataset had been adjusted to the same datum. With the revision to the dataset data values for 1943 onwards now have the RLR factor 3.505m.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

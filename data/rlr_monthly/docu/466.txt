@@ -10,4 +10,6 @@ New acoustic gauge installed at La Pallice 28/4/1997 at 4609N 00113W (prev. 4610
 Name of the Primary benchmark has been changed to IGN O.O.K3 - 126 9.107m above Zero Hydrographique.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 24-Sep-2014
 Using values from the SONEL website the latitude and longitude for La Rochelle have been revised. The downloaded data from SONEL contained some additional data points particularly for the early 1940's. Because of this the complete dataset has been reloaded.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

@@ -381,7 +381,7 @@ def reconstruct_data(eof_dataset: xr.Dataset, stations: {int: tide_gauge_station
                 logger.warning(f"Not enough stations for date {date}")
                 continue
             # create a vector with the observed data from the stations that are centers at that point in time
-            # TODO: fill de vector with the difference between each pair of time steps
+            # TODO: fill the vector with the difference between each pair of time steps
             tide_gauges = np.array(np.zeros((len(current_stations), 1)))
             for i, station in enumerate(current_stations.values()):
                 if date in station.timeseries_detrended_normalized.keys():

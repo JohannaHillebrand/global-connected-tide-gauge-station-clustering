@@ -1,6 +1,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,macos,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,macos,pycharm
 
+data/*
+output/*
+.idea/
+.vscode/
+pythonProject/
+test/test_output/
+*.zip
+
 ### macOS ###
 # General
 .DS_Store

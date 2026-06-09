@@ -22,4 +22,6 @@ The adjustment due to the Kaikōura earthquake of 2016 has been removed as relat
 A revised copy of the New Zealand data values for Port Lyttelton has been received from the data supplier the Land Information New Zealand (LINZ). The revised data begins from 2014. This exercise has been carried out to correct some anomalies with the high frequency data.
 Adjustment has also been applied to the data to account for the Kaikoura earthquake by creating a new datum TGZ December 2016 4.371m below benchmark UD40.
 Consequently the Metric data has had the effect of Kaikoura removed but the effect of the earthquake is evident in the RLR data.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 23-Oct-2024
+LINZ have informed us that the station was relocated on 4 September 2020, and since then the tide gauge zero has been Chart Datum, 4.478 m below UD40. RLR data from September 2020 onward has been recomputed.
 

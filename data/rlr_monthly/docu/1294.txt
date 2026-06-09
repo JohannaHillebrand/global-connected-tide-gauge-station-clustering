@@ -8,4 +8,6 @@ Primary benchmark has been re-named to IGN no 100 20.80m above Zero Hydrographiq
 Using values from the SONEL website the latitude and longitude for Le Conquet has been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 21-Jun-2016
 When the 2015 dataset were added it was noted that the datapoints for April, July and September 2012 had been revised.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

@@ -12,4 +12,6 @@ Primary benchmark is now NGF M.A.I3K3 - OB 7.712m above TGZ.
 Using data from SONEL the latitude and longitude for Nice have been revised.
 =========================== FOLLOWING PSMSL DOCUMENTATION ADDED 21-Jun-2016
 When adding the 2015 data to the dataset it was noted that the value for the datapoint for September 2012 had been revised.
+=========================== FOLLOWING PSMSL DOCUMENTATION ADDED 15-Jul-2025
+Updated the whole dataset to ensure they include all the historical data recovered recently by SHOM and the calculated monthly and annual means match those distributed by SONEL.
 

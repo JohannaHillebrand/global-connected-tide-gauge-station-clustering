@@ -16,7 +16,7 @@ class TideGaugeStation:
     timeseries: dict
     # subtract the mean from each value in the timeseries
     timeseries_detrended_normalized: dict
-    area: float
+    area: float = 0.0
 
     def __eq__(self, other):
         return (self.id == other.id and self.name == other.name and self.latitude == other.latitude and self.longitude
